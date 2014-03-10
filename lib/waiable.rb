@@ -1,5 +1,8 @@
-require "waiable/version"
+require_relative "waiable/version"
 
 module Waiable
-  # Your code goes here...
+
+  def link_to()
+
+  end
 end
