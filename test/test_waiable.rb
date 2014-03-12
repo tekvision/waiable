@@ -16,9 +16,12 @@ class TestWaiable < Minitest::Test
   end
 
   def test_table_for_with_headers
-
+    assert_equal('<table> <tr> <th>Header</th> </tr> </table>', table_for(column_headers[Header]))
   end
 
+  def test_form_for
+
+  end
 
 
 end
