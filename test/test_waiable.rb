@@ -12,7 +12,7 @@ class TestWaiable < Minitest::Test
   end
 
   def test_table_for_with_summary
-    assert_equal('<table summary="This is table summary"></table>', table_for({summary: "This is table summary"))
+    assert_equal('<table summary="This is table summary"></table>', table_for({summary: "This is table summary"}))
   end
 
   def test_table_for_with_headers
