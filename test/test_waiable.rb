@@ -19,7 +19,15 @@ class TestWaiable < Minitest::Test
     assert_equal('<table> <tr> <th>Header</th> </tr> </table>', table_for(column_headers[Header]))
   end
 
-  def test_form_for
+  def test_grid_for_with_role_grid
+    assert_equal('<div role="grid"></div>', grid_for(container))
+  end
+
+  def test_grid_for_with_role_row
+       assert_equal('<div><div role="row"></div></div>', grid_for(container,))
+  end
+
+  def test_form_for_with_label
 
   end
 
