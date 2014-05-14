@@ -1,6 +1,6 @@
 # Waiable
 
-waiable gem is the Rails **W**&#8203;eb **A**&#8203;ccessibiliy **I**&#8203;nitiative for differently **able**.
+waiable gem is the Rails **W**&#8203;eb **A**&#8203;ccessibility **I**&#8203;nitiative for differently **able**.
 
 This gem forces all Rails ActionView components to be compliant with WAI-ARIA standards.
 More details to be added.
