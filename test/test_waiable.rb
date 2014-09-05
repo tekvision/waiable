@@ -3,6 +3,7 @@ require './lib/waiable'
 
 class TestWaiable < Minitest::Test
   include Waiable
+
   def test_link_to_with_text
     assert_equal('<a href="http://www.example.com">Hello</a>', link_to("Hello", "http://www.example.com"))
   end
