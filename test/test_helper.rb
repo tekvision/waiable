@@ -34,7 +34,6 @@ ActionDispatch::Assertions::NO_STRIP << "label"
 
 class ActionView::TestCase
   include MiscHelpers
-  include SimpleForm::ActionViewExtensions::FormHelper
 
   setup :set_controller
   setup :setup_users
