@@ -6,6 +6,7 @@ require 'waiable/version'
 Gem::Specification.new do |spec|
   spec.name          = "waiable"
   spec.version       = Waiable::VERSION
+  spec.platform      = Gem::Platform::RUBY
   spec.authors       = ["Nitin Dhaware", "Gautam Rege", "Sethupathi Asokan", "Jiren Patel", "Shailesh Patil"]
   spec.email         = ["gautam@joshsoftware.com"]
   spec.summary       = %q{This gems makes Rails ActionViews adhere to WAI accessibility standards}

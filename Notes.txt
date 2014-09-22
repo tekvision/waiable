@@ -1,0 +1,7 @@
+Grid
+Phase 1:
+Help:
+1. Link title (fixed at "Keyboard shortcuts are available here.")
+2. Link href. Just like assets, set of html pages available via the gem.
+3. Hidden element before the grid indicating help on how to focus/activate grid. This help should be browser-screen reader specific.
+4. Additional help in case the first grid cell receives focus in Browse mode instead of Focus Mode.
