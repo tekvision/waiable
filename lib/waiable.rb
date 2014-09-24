@@ -1,5 +1,5 @@
 require 'waiable/version'
-require 'waiable/action_view/helpers'
+require 'waiable/helpers/grid_helper'
 require 'waiable/railtie' if defined?(Rails)
 
 
