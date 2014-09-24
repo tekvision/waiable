@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require './lib/waiable/helpers/helper'
+require '/test/test_helper'
+require './lib/waiable/helpers/grid_helper'
 
  class TestGridHelper < ActionDispatch::IntegrationTest
 
