@@ -192,7 +192,7 @@ require './lib/waiable/helpers/grid_helper'
 	</div>
       </div>
     </div>%)
-    buffer = grid_for(:grid_2, :readonly => false, :grid_option{:class => game-levels no-focus}, :rows_option{:class => row-wise-container}, :cell_option{:class => col-lg-4 col-sm-4})
+    buffer = grid_for(:grid_2, :readonly => "false", :grid_option => {:class => "game-levels no-focus"}, :rows_option => {:class => "row-wise-container"}, :cell_option => {:class => "col-lg-4 col-sm-4"})
     assert_equal(XmlSimple.xml_in(buffer, 'NormaliseSpace' => 2), xml)
   end
 end
