@@ -1,9 +1,9 @@
-require '/test/test_helper'
+require './test/test_helper'
 require './lib/waiable/helpers/grid_helper'
 
- class TestGridHelper < ActionDispatch::IntegrationTest
+ describe "grid_for" do
 
-  test "should generate a empty grid given Dimensions of rows and columns" do
+  it "should generate a empty grid given Dimensions of rows and columns" do
     xml = XmlSimple.xml_in(%%
       <div id="grid1" role="grid" tabindex="-1" class="grid">
         <div id="grid1_row_0" class="row" role="row">
@@ -23,7 +23,7 @@ require './lib/waiable/helpers/grid_helper'
     assert_equal(XmlSimple.xml_in(buffer, 'NormaliseSpace' => 2), xml)
   end
 
-  test "should render a grid with data supplied as 2D array" do
+  it  "should render a grid with data supplied as 2D array" do
     xml = XmlSimple.xml_in(%%
       <div id="grid1" role="grid" tabindex="-1" class="grid">
         <div id="grid1_row_0" class="row" role="row">
@@ -47,7 +47,7 @@ require './lib/waiable/helpers/grid_helper'
     assert_equal(XmlSimple.xml_in(buffer, 'NormaliseSpace' => 2), xml)
   end
 
-  test "should generate a grid with header and data" do
+  it "should generate a grid with header and data" do
     xml = XmlSimple.xml_in(%%
       <div id="grid_2" role="grid" tabindex="-1" class="grid">
         <div id="grid_2_row_header" class=" row header" role="row">
@@ -88,7 +88,7 @@ require './lib/waiable/helpers/grid_helper'
     assert_equal(XmlSimple.xml_in(buffer,'NormaliseSpace' => 2), xml)
   end
 
-  test "should generate a grid with header and editable cells" do
+  it "should generate a grid with header and editable cells" do
     xml = XmlSimple.xml_in(%%
       <div id="grid_2" role="grid" tabindex="-1" class="grid">
         <div id="grid_2_row_header" class=" row header" role="row">
@@ -131,7 +131,7 @@ require './lib/waiable/helpers/grid_helper'
     assert_equal(XmlSimple.xml_in('buffer, NormaliseSpace' => 2), xml)
   end
 
-  test "should generate a grid with data and with default focus set on custom cell" do
+  it "should generate a grid with data and with default focus set on custom cell" do
     xml = XmlSimple.xml_in(%%
       <div id="grid_1" class="grid" role="grid" tabindex="-1" class="grid">
         <div id="grid_1_row_0" class="row" role="row">
@@ -172,7 +172,7 @@ require './lib/waiable/helpers/grid_helper'
     asert_equal(XmlSimple.xml_in(buffer, 'NormaliseSpace' => 2), xml)
   end
 
-  test "should generate a grid element with grid_option, row_option, cell_option" do
+  it "should generate a grid element with grid_option, row_option, cell_option" do
     xml = XmlSimple.xml_in(%%
     <div id="grid_2" role="grid" class="grid game-levels no-focus" tabindex="-1">
       <div id="grid_2_row_0" class="row row-wise-container" role="row">

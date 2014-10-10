@@ -1,5 +1,6 @@
 require 'waiable'
-require 'minitest/unit'
 require 'minitest/autorun'
+require 'minitest/unit'
 require 'minitest/pride'
-require 'mocha/mini_test'
+require 'xmlsimple'
+#require 'mocha/mini_test'
