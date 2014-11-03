@@ -1,0 +1,25 @@
+grid_for() parameter list
+
+1) :id
+2) rows count
+3) columns count
+4) data{}
+5) grid_option{:class, :width, :hight}
+6) rows_option{:class, :width, :hight, :BG_color}
+7) cell_option{:class, :width, :hight, BG_color}
+8) focusable cell[r,c]
+9) header columns[]
+
+various types of calls for grid_for method.
+
+grid_for(:id, :rows_count, :columns_count)
+grid_for(:id, :data{})
+grid_for(:id, :header['Sr No', 'Name', 'Email'], :data{})
+grid_for(:id, :rows_count, :header['Id', 'Name', 'Role', "Email"], readonly false)
+grid_for(:id, :rows_count, :columns_count, :data{}, 	, :focusable_cell[2,3])
+
+
+We are design grid widget in three fazes
+1) Basic plain accessible grid with data
+2) Including css classes and design part
+3) Including advance functionality. Add different types of elements, images.  
