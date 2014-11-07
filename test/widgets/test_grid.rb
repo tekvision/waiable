@@ -1,11 +1,17 @@
 require './test/test_helper'
 
-class TestGrid < ActionView::TestCase
+class TestGrid < Test::Unit::TestCase
 
   def initialize
     @grid = Grid.new
   end
 
-  it ""
+  def test_grid_for(id, &block)
+  end
+
+  describe "grid_for" do  
+    it "should generate the grid element" do
+      
+    end
   end
 end

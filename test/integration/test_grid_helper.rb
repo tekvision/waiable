@@ -196,3 +196,85 @@ require './lib/waiable/helpers/grid_helper'
     assert_equal(XmlSimple.xml_in(buffer, 'NormaliseSpace' => 2), xml)
   end
 end
+
+describe "grid_for with wrappers element" do 
+  it "should generate the grid element with grid wrapper" do
+    xml = XmlSimple.xml_in(%%
+      <div class="grid-wrapper">
+         <div id="grid_1" class="grid" role="grid" tabindex="-1">
+          <div id="grid_1_row_0" class="row" role="row">
+            <div id="grid_1_row_0_cell_0" class="gridcell" role="gridcell" tabindex="0" aria-selected="true">
+            </div>
+            <div id="grid_1_row_0_cell_1" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+            </div>
+          </div>
+          <div id="grid_1_row_1" class="row" role="row">
+            <div id="grid_1_row_1_cell_0" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+            </div>
+            <div id="grid_1_row_1_cell_1" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+            </div>
+          </div>
+        </div>
+      </div>%)
+    buffer = grid_for(:grid_1, :grid_option => {:grid_wrapper => "div"}, :row_count => 2, :readonly => "true")  
+    assert_equal(XmlSimple.xml_in(buffer, 'NormaliseSpace' => 2), xml)
+  end
+
+  it "should generate the grid element with row wrappers" do
+    xml = XmlSimple.xml_in(%%
+      <div class="grid-wrapper">
+         <div id="grid_3" class="grid" role="grid" tabindex="-1">
+          <div class="row-wrapper">
+            <div id="grid_3_row_0" class="row" role="row">
+              <div id="grid_3_row_0_cell_0" class="gridcell" role="gridcell" tabindex="0" aria-selected="true">
+              </div>
+              <div id="grid_3_row_0_cell_1" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+              </div>
+            </div>
+          </div>
+          <div class="row-wrapper">
+            <div id="grid_3_row_1" class="row" role="row">
+              <div id="grid_3_row_1_cell_0" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+              </div>
+              <div id="grid_3_row_1_cell_1" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>%)
+    buffer = grid_for(:grid_3, :grid_option => {:grid_wrapper => "div"}, :row_count => 2, :row_option => {:row_wrapper => "div"}, :readonly => true)
+    assert_equal(XmlSimple.xml_in(buffer, 'NormaliseSpece' => 2), xml)
+  end
+
+  it "should generate the grid element with cell wrappers" do
+    xml = XmlSimple.xml_in(%%
+      <div id="grid_1" class="grid" role="grid" tabindex="-1">
+        <div class="row-wrapper">
+          <div id="grid_1_row_0" class="row" role="row">
+            <div class="cell-wrapper">
+              <div id="grid_1_row_0_cell_0" class="gridcell" role="gridcell" tabindex="0" aria-selected="true">
+              </div>
+            </div>
+            <div class="cell-wrapper">
+              <div id="grid_1_row_0_cell_1" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+              </div>          
+            </div>
+          </div>
+        </div>
+        <div class="row-wrapper">
+          <div id="grid_1_row_1" class="row" role="row">
+            <div class="cell-wrapper">
+              <div id="grid_1_row_1_cell_0" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+              </div>
+            </div>
+            <div class="cell-wrapper">
+              <div id="grid_1_row_1_cell_1" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+              </div>          
+            </div>
+          </div>
+        </div>
+      </div>%)
+    buffer = grid_for(:grid_1, :row_count => 2, :readonly => "true", :row_option => {:row_wrapper => "div"}, :cell_option => {:cell-wrapper => "div"})
+  assert_equal(XmlSimple.xml_in(buffer, 'NormaliseSpace' => 2), xml)
+  end
+end

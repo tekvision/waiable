@@ -17,6 +17,7 @@ grid_for(:id, :data{})
 grid_for(:id, :header['Sr No', 'Name', 'Email'], :data{})
 grid_for(:id, :rows_count, :header['Id', 'Name', 'Role', "Email"], readonly false)
 grid_for(:id, :rows_count, :columns_count, :data{}, 	, :focusable_cell[2,3])
+grid_for(:id, :rows_count, :rows_option{}, :data())
 
 
 We are design grid widget in three fazes
