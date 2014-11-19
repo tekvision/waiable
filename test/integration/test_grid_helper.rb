@@ -133,7 +133,7 @@ require './lib/waiable/helpers/grid_helper'
 
   it "should generate a grid with data and with default focus set on custom cell" do
     xml = XmlSimple.xml_in(%%
-      <div id="grid_1" class="grid" role="grid" tabindex="-1" class="grid">
+      <div id="grid_1" class="grid" role="grid" tabindex="-1">
         <div id="grid_1_row_0" class="row" role="row">
           <div id="grid_1_row_0_cell_0" class="gridcell" role="gridcell" tabindex="-1" aria-selected="false" aria-labelledby="grid_1_caption_0_0">
 	    <p id="grid_1_caption_0_0">Prashant</p>

@@ -38,7 +38,15 @@ def tabpanel_for(:id, *args &block, )
 end
 
 tabpanel_for(:id => "tabpanel1", :class => "tabpanel", :horizontal => true, @data) |tp| do
-  tp.tablist_contener(:tabpanel_id => "tabpanel1", tabs["tab1", "tab2", "tab3", "tab4"]) |tc| do
-    tc.panel_contener()
+  tp.tablist_contener(:tabpanel_id => "tabpanel1", tabs["tab1", "tab2", "tab3", "tab4"]) 
+  tp.panel_contener(tabpanel_for(:id, :horizontal => "false") do |ntp|
+    ntp.tablist_contener().render
+    ntp.panel_contener().render
+  end
+  )  
   end
 end
+
+
+
+@tabpanel = tabpanel_for()
