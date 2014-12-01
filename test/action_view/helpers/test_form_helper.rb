@@ -1,30 +1,25 @@
 require './test/test_helper'
+require 'action_view/helpers'
+require 'action_view/helpers/form_helper'
 
-describe "text_field" do
-
+describe "form_for" do
+  form_buffer = ::ActionView::Helpers::FormHelper::form_for @person do |f|
   it "should generate label with id attribute" do
-    html = '<label id="label_person_first_name" for="person_first_name">First name</label>:'
-    buffer = form_for @person do |f|
-      f.label :first_name:      
-    end
+    html = '<label id="label_person_first_name" for="person_first_name">First name</label>'
+    buffer = f.label :first_name
     assert_equal(html, buffer)
   end
 
   it "should generate text field with label associated using aria-labelledby attribute" do
-    html = '<input type="text" id="person_first_name" name="person[first_name]" aria-labelledby="label_person_first_name"/>'  
-    buffer =form_for @person do |f|
-      f.text_field :first_name 
-    end 
+    html = '<input type="text" id="person_first_name" name="person[first_name]" aria-labelledby="label_person_first_name"/>'
+    buffer = f.text_field :first_name
     assert_equal(html, buffer)
   end
 
-  it "mandet fields should generate the aria-required attribute" do
+  it "should generate aria-required attribute for mandatory fields." do
     html = '<input type="text" id="user_first_name" name="user[first_name]" aria-labelledby="label_user_first_name" aria-required="true"/>'
-    buffer = form_for @user do |f|
-      f.text_field :first_name
-    end 
+    buffer = f.text_field :first_name
     assert_equal(html, buffer)
-  end
-end
-
-
+    end
+  end#form_for
+end#describe
