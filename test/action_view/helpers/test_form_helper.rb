@@ -1,25 +1,21 @@
-require './test/test_helper'
-require 'action_view/helpers'
-require 'action_view/helpers/form_helper'
+class WaiableFormBuilderTest < ActionView::TestCase
+  test "testing label" do
+    #expect = '<label id="label_person_name" for="person_name">Name</label>'
+    expect = 'id="label_person_name"'
 
-describe "form_for" do
-  form_buffer = ::ActionView::Helpers::FormHelper::form_for @person do |f|
-  it "should generate label with id attribute" do
-    html = '<label id="label_person_first_name" for="person_first_name">First name</label>'
-    buffer = f.label :first_name
-    assert_equal(html, buffer)
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.label :name
+      assert_match(expect, actual)
+    end #form_for
   end
 
-  it "should generate text field with label associated using aria-labelledby attribute" do
-    html = '<input type="text" id="person_first_name" name="person[first_name]" aria-labelledby="label_person_first_name"/>'
-    buffer = f.text_field :first_name
-    assert_equal(html, buffer)
-  end
+  test "testing text_field" do
+    #expect = '<input type="text" id="person_name" name="person[name]" aria-labelledby="label_person_name"/>'
+    expect = 'aria-labelledby="label_person_name"'
 
-  it "should generate aria-required attribute for mandatory fields." do
-    html = '<input type="text" id="user_first_name" name="user[first_name]" aria-labelledby="label_user_first_name" aria-required="true"/>'
-    buffer = f.text_field :first_name
-    assert_equal(html, buffer)
-    end
-  end#form_for
-end#describe
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.text_field :name
+      assert_match(expect, actual)
+    end #form_for
+  end
+end
