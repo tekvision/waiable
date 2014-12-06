@@ -7,7 +7,7 @@ class WaiableAssetUrlTest < ActionView::TestCase
   end
 
   test "testing decorative image_tag with alt attribute" do
-    expect = 'alt=""'
+    expect = 'alt="" decorative="true"'
 
     actual = image_tag("seperator.png")
     assert_match(expect, actual)
