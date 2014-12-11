@@ -108,4 +108,58 @@ class WaiableFormBuilderTest < ActionView::TestCase
       assert_match(expect, actual)
     end
   end
+
+  test "testing check_box with aria-labelledby attribute" do
+    expect = 'aria-labelledby="label_person_publish"'
+
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.check_box :publish
+      assert_match(expect, actual)
+    end
+  end
+
+  test "testing search_field with aria-labelledby attribute" do
+    expect = 'aria-labelledby="label_person_name"'
+    
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.search_field :name
+      assert_match(expect, actual)
+    end
+  end
+
+  test "testing datetime_field with aria-labelledby attribute" do
+    expect = 'aria-labelledby="label_person_joindate"'
+  
+    form_buffer = form_for :person,  url: "dummy" do |f|
+      actual = f.datetime_field :joindate
+      assert_match(expect, actual) 
+    end
+  end
+
+  test "testing datetime_field with aria-required attribute for mandatory field" do
+    expect = 'aria-required="true"'
+
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.datetime_field :joindate
+      assert_match(expect, actual)
+    end
+  end
+
+  test "testing phone_field with aria-labelledby attribute" do
+    expect = 'aria-labelledby="label_person_mobile_number"'
+
+    form_builder = form_for :person, url: "dummy" do |f|
+      actual = f.phone_field :mobile_number
+      assert_match(expect, actual)
+    end
+  end
+
+  test "testing phone_field with aria-required attribute for mandatory field" do
+    expect = 'aria-required="true"'
+
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.phone_field :mobile_number
+      assert_match(expect, actual)
+    end
+  end
 end
