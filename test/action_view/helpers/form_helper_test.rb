@@ -193,4 +193,25 @@ class WaiableFormBuilderTest < ActionView::TestCase
       assert_match(expect, actual)
     end
   end
+
+  test "testing select tag with aria-labelledby attribute" do
+    expect = 'aria-labelledby="label_person_country"'
+
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.select(:email, [["pramod@gmail.com, 1"], ["tushar@gmail.com", 2], ["monoj@yahoo.in", 3], ["roshan@gmail.com", 4]])
+      assert_match(expect, actual)
+    end
+  end
+
+  test "testing select tag with aria-required attribute for manditary field" do
+    expect = 'aria-required="true"'
+
+    form_buffer = form_for :validatingperson, url: "dummy" do |f|
+      actual = f.select(:country, [["India", 1], ["Chaina", 2], ["Pakisthan", 3]])
+      assert_match(expect, actual)
+    end
+  end
+
+  test "testing select tag with multiple attribute" do
+  end
 end
