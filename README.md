@@ -9,34 +9,23 @@ first override the basic stuff like forms and web content (images/tables/page st
 If you are looking to contribute, please  go through the contributing section below.
 
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'waiable'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install waiable
-
 ## Usage
-
+We will update this section in detail by end of January 2015.
 
 ## Contributing
-###Contributing via Meetup events
-Starting December 2014, we are taking up contributions to WAIable as part of PRUG Meetups. So we would recommend to have an account on Meetup and be part of Pune Ruby Users Group.
-###Follow us
-Twitter: @techvision_ss
-Blog: http://accessiblerails.wordpress.com
-
-###How to go about it?
+###Fork the repository
 1. Fork it 
 https://github.com/techvision/waiable/fork
 2. Create your feature branch ( git checkout -b my-new-feature )
-3. Commit your changes ( git commit -am 'Add some feature' )
-4. Push to the branch ( git push origin my-new-feature )
-5. Create new Pull Request
+###Contribute at Pune Ruby Meetups
+
+Starting December 2014, we are taking up contributions to WAIable as part of PRUG Meetups. So we would recommend to have an account on [Meetup](http://www.meetup.com/) and be part of [Pune Ruby Users Group](http://www.meetup.com/PuneRailsMeetup/).
+Meetup events are being posted out there and we call upon contributions from vibrant Ruby community for WAIable.
+You can join  us in the meetup to have more insight into what Accessibility is all about and what we are doing in WAIable.
+###Then contribute online
+1. Commit your changes ( git commit -am 'Add some feature' )
+2. Push to the branch ( git push origin my-new-feature )
+3. Create new Pull Request
+###Follow us
+Twitter: @techvision_ss
+Blog: http://accessiblerails.wordpress.com
