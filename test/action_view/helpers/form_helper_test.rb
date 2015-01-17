@@ -1,3 +1,4 @@
+require 'test_helper'
 class WaiableFormBuilderTest < ActionView::TestCase
   test "testing label with id attribute" do
     #expect = '<label id="label_person_name" for="person_name">Name</label>'
