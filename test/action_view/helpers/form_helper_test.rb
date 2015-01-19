@@ -22,7 +22,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
 
   test "testing text_field with aria-required attribute for mandatory fields " do
     expect = 'aria-required="true"'
-    
+
     form_buffer = form_for :validatingperson, url: "dummy" do |f|
       actual = f.text_field :name, :required => true
       assert_match(expect, actual)
@@ -40,7 +40,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
 
   test "testing email_field with aria-required attribute for mandatory field" do
     expect = 'aria-required="true"'
-    
+
     form_buffer = form_for :validatingperson, url: "dummy" do |f|
       actual = f.email_field :email
       assert_match(expect, actual)
@@ -67,7 +67,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
 
   test "testing text_area with aria-labelledby attribute" do
     expect = 'aria-labelledby="label_person_address"'
-    
+
     form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.text_area :address
       assert_match(expect, actual)
@@ -87,7 +87,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
     expect = 'aria-labelledby="label_person_gender"'
 
     form_buffer = form_for :person, url: "dummy" do |f|
-      actual = f.radio_button(:gender, "Male") 
+      actual = f.radio_button(:gender, "Male")
       assert_match(expect, actual)
     end
   end
@@ -121,7 +121,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
 
   test "testing search_field with aria-label attribute" do
     expect = 'aria-label="Search"'
-    
+
     form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.search_field :name
       assert_match(expect, actual)
@@ -130,7 +130,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
 
   test "testing search_field with title attribute" do
     expect = 'title="Search"'
-    
+
     form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.search_field :name
       assert_match(expect, actual)
@@ -139,16 +139,16 @@ class WaiableFormBuilderTest < ActionView::TestCase
 
   test "testing datetime_field with aria-labelledby attribute" do
     expect = 'aria-labelledby="label_person_joindate"'
-  
+
     form_buffer = form_for :person,  url: "dummy" do |f|
       actual = f.datetime_field :joindate
-      assert_match(expect, actual) 
+      assert_match(expect, actual)
     end
   end
 
   test "testing datetime_field with aria-required attribute for mandatory field" do
     expect = 'aria-required="true"'
-
+    @validatingperson = ValidatingPerson.new
     form_buffer = form_for :validatingperson, url: "dummy" do |f|
       actual = f.datetime_field :joindate
       assert_match(expect, actual)
