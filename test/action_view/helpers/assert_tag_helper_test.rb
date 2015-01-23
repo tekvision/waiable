@@ -1,9 +1,8 @@
 class WaiableAssetUrlTest < ActionView::TestCase
   test "testing image_tag with alt attribute" do
-    expect = 'alt="Techvision logo"'
+    expect = assert_raises(Exception) {image_tag("techvision.png") if alt == ""}
 
-    actual = image_tag("techvision.png")
-    assert_match(expect, actual)
+    assert_equal("Message", expect.message)
   end
 
   test "testing decorative image_tag with alt attribute" do
