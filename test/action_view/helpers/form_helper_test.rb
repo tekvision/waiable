@@ -24,7 +24,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
     expect = 'aria-required="true"'
     
     form_buffer = form_for :validatingperson, url: "dummy" do |f|
-      actual = f.text_field :name, :required => true
+      actual = f.text_field :name, :required => true, :maxlength => "20"
       assert_match(expect, actual)
     end
   end
