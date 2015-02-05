@@ -29,6 +29,17 @@ class WaiableFormBuilderTest < ActionView::TestCase
     end
   end
 
+  test "testing text_field with maxlength attribute" do
+    expect = 'aria-describedby="maxlength_person_name"'
+    extra_content = '<div id="maxlength_person_name" value="You can enter maxmum 20 character in this field"></div>'
+    expect + extra_content
+
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.text_field :name, :maxlength => "20"
+      assert_match(expect, actual)
+    end
+  end
+
   test "testing email_field with aria-labelledby attribute" do
     expect = 'aria-labelledby="label_person_email"'
 
