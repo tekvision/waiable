@@ -23,14 +23,14 @@ class WaiableFormBuilderTest < ActionView::TestCase
   test "testing text_field with aria-required attribute for mandatory fields " do
     expect = 'aria-required="true"'
     
-    form_buffer = form_for :validatingperson, url: "dummy" do |f|
-      actual = f.text_field :name, :required => true, :maxlength => "20"
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.text_field :name, :maxlength => "20"
       assert_match(expect, actual)
     end
   end
 
   test "testing text_field with maxlength attribute" do
-    expect = 'aria-describedby="maxlength_person_name"'
+    expect = 'aria-describedby="maxlength_label_person_name"'
     extra_content = '<div id="maxlength_person_name" value="You can enter maxmum 20 character in this field"></div>'
     expect + extra_content
 
@@ -52,7 +52,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   test "testing email_field with aria-required attribute for mandatory field" do
     expect = 'aria-required="true"'
     
-    form_buffer = form_for :validatingperson, url: "dummy" do |f|
+    form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.email_field :email
       assert_match(expect, actual)
     end
@@ -70,7 +70,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   test "testing password_field with aria-required attribute" do
     expect = 'aria-required="true"'
 
-    form_buffer = form_for :validatingperson, url: "dummy" do |f|
+    form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.password_field :password
       assert_match(expect, actual)
     end
@@ -88,7 +88,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   test "testing text_area with aria-required attribute for mandatory field" do
     expect = 'aria-required="true"'
 
-    form_buffer = form_for :validatingperson, url: "dummy" do |f|
+    form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.text_area :address
       assert_match(expect, actual)
     end
@@ -115,7 +115,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   test "testing date_field with aria-required attribute for mandatory field" do
     expect = 'aria-required="true"'
 
-    form_buffer = form_for :validatingperson, url: "dummy" do |f|
+    form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.date_field :dateofbirth
       assert_match(expect, actual)
     end
@@ -160,7 +160,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   test "testing datetime_field with aria-required attribute for mandatory field" do
     expect = 'aria-required="true"'
 
-    form_buffer = form_for :validatingperson, url: "dummy" do |f|
+    form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.datetime_field :joindate
       assert_match(expect, actual)
     end
@@ -178,7 +178,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   test "testing phone_field with aria-required attribute for mandatory field" do
     expect = 'aria-required="true"'
 
-    form_buffer = form_for :validatingperson, url: "dummy" do |f|
+    form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.phone_field :mobile_number
       assert_match(expect, actual)
     end
@@ -196,12 +196,9 @@ class WaiableFormBuilderTest < ActionView::TestCase
   test "testing select tag with aria-required attribute for manditary field" do
     expect = 'aria-required="true"'
 
-    form_buffer = form_for :validatingperson, url: "dummy" do |f|
+    form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.select(:country, [["India", 1], ["Chaina", 2], ["Pakisthan", 3]])
       assert_match(expect, actual)
     end
-  end
-
-  test "testing select tag with multiple attribute" do
   end
 end
