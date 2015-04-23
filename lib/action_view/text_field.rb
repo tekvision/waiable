@@ -14,11 +14,7 @@ module Waiable
         end
       end
 
-      def add_default_name_and_id(options)
-        super
-        options["aria-labelledby"] = "label_#{options["id"]}"
-      end
-
+      
       def options_for_rendering
         options = @options.stringify_keys
         options["size"] = options["maxlength"] unless options.key?("size")
