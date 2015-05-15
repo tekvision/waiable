@@ -77,7 +77,6 @@ end
         ActionView::Helpers::Tags::DatetimeField,
         ActionView::Helpers::Tags::FileField,
         ActionView::Helpers::Tags::NumberField,
-        ActionView::Helpers::Tags::DateField
         
 
 #	ActionView::Helpers::Tags::TextArea
