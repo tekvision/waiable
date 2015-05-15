@@ -80,7 +80,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
     expect = 'aria-labelledby="label_person_address"'
     
     form_buffer = form_for :person, url: "dummy" do |f|
-      actual = f.text_area :address
+      actual = f.text_area :address, maxlength: "50"
       assert_match(expect, actual)
     end
   end

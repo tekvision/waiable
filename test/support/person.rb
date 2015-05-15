@@ -10,6 +10,7 @@ class Person
   validates :joindate, presence: true
   validates :mobile_number, presence: true
   validates :country, presence: true
+  validates :address, presence: true
 end
 
 

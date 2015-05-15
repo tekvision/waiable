@@ -1,22 +1,19 @@
 require 'pry'
-require 'action_view/basemethods'
+require 'action_view/common_methods'
 require 'active_support/concern'
 
 module Waiable
   module Base
     module TextField
       extend ActiveSupport::Concern
-include CommonMethods
+      include CommonMethods
 
-      TAG_PREFIXES = ['aria', 'data', :aria, :data].to_set
       included do
         def render
           options_for_rendering
           aria_content(@options)
         end
-      end
-      
-
+      end   
       
       def aria_content(options)        
 	aria = ""        
