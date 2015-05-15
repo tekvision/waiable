@@ -201,4 +201,15 @@ class WaiableFormBuilderTest < ActionView::TestCase
       assert_match(expect, actual)
     end
   end
+
+  test "wrap error element with div element" do
+    expect = '<div id="error_user_first_name"></div>'.html_safe
+    form_buffer = form_for :person, url: "dummy" do |f|
+      :person.errors.full_messages.each do |msg|
+        actual = '<li>msg</li>'.html_safe
+        assert_match(expect, actual)
+      end
+    end    
+  end
+
 end
