@@ -18,7 +18,7 @@ module Waiable
       def aria_content(options)        
 	aria = ""        
 	if options["maxlength"]
-          aria = tag("input", options) + content_tag(:div,  "You can enter maximum " + options["maxlength"] + " characters in this field", id: "maxlength_#{options["id"]}" )
+          aria = tag("input", options) + content_tag(:div,  "You can enter maximum " + options["maxlength"] + " characters in this field", id: "maxlength_#{options["id"]}", style: "display:none")
         else
           aria = tag("input", options)
 	end

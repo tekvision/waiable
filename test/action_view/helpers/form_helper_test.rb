@@ -202,14 +202,17 @@ class WaiableFormBuilderTest < ActionView::TestCase
     end
   end
 
-  test "wrap error element with div element" do
-    expect = '<div id="error_user_first_name"></div>'.html_safe
-    form_buffer = form_for :person, url: "dummy" do |f|
-      :person.errors.full_messages.each do |msg|
-        actual = '<li>msg</li>'.html_safe
-        assert_match(expect, actual)
-      end
-    end    
-  end
 
+  test "wrap error element with div element" do
+     person = Person.new
+
+     form_buffer = form_for person, url: "dummy", as: 'person_form' do |f| 
+       puts person(:name => "", :email => "", :password => "", :address => "").create
+       f.object.errors.full_messages.each do |msg|
+         puts expect = '<div id="error_user_first_name"><li>msg</li></div>'.html_safe
+         actual = '<li>msg</li>'.html_safe
+         assert_match(expect, actual)
+       end
+     end      
+   end 
 end

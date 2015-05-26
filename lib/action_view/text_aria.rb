@@ -27,7 +27,7 @@ module Waiable
       def aria_content_tag(options)
         aria= ""
         if options["maxlength"]          
-          aria= content_tag("textarea", options.delete("value") { value_before_type_cast(object) }, options) + content_tag(:div, "You can enter maximum " +options["maxlength"]+ " characters in this field.", id: "maxlength_#{options["id"]}")
+          aria= content_tag("textarea", options.delete("value") { value_before_type_cast(object) }, options) + content_tag(:div, "You can enter maximum " +options["maxlength"]+ " characters in this field.", id: "maxlength_#{options["id"]}", style: "display:none")
         else
           aria= content_tag("textarea", options.delete("value") { value_before_type_cast(object) }, options)
         end
