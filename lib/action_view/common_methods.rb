@@ -26,10 +26,10 @@ module Waiable
       options['aria'] ||= {}
       if options["maxlength"]
         arr_describedby << "maxlength_#{add_default_name_and_id(options)}"
-	options["aria"]["describedby"] = arr_describedby.join(", ")
+	options["aria"]["describedby"] = arr_describedby.join(" ")
       end
       arr_describedby << "error_#{add_default_name_and_id(options)}" if object_has_errors?
-      options["aria"]["describedby"] = arr_describedby.join(", ")
+      options["aria"]["describedby"] = arr_describedby.join(" ")
     end
 
 
