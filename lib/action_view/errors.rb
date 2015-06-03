@@ -1,9 +1,10 @@
 require 'pry'
+require 'action_view/helpers/tag_helper'
 require 'active_support/concern'
 
 
 module Waiable
-  module ActionView
+  module ActiveModel
     module Errors
 
       extend ActiveSupport::Concern
@@ -11,11 +12,11 @@ module Waiable
 
       included do
         def full_messages
-          map { |attribute, message| full_message(attribute, message) }
+          map { |attribute, message| error_full_message(attribute, message) }
         end
       end
 
-      def full_message(attribute, message)
+      def error_full_message(attribute, message)
         puts "Hello call error_full_message method"
         return message if attribute == :base
         attr_name = attribute.to_s.tr('.', '_').humanize
@@ -37,5 +38,5 @@ end
 [
   ActiveModel::Errors
 ].each do |t|
-  t.send :include, Waiable::ActionView::Errors
+  t.send :include, Waiable::ActiveModel::Errors
 end
