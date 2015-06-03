@@ -1,6 +1,10 @@
+require 'active_model/validations'
+
+
 class Person 
   extend ActiveModel::Naming
   include ActiveModel::Validations
+
   
   attr_accessor :attributes
   attr_accessor :name, :email, :password, :address, :gender, :dateofbirth, :publish, :joindate, :created_at, :mobile_number, :country
