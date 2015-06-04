@@ -21,18 +21,18 @@ module Waiable
       add_default_name_and_id(@options)
     end
 
-def add_aria_labelledby_for_values(tag_value, options)
-arr_labelledby= []
-options["aria"] ||= {}
-arr_labelledby << "label_#{add_default_name_and_id(options)}"
-if tag_value.nil?
-options["aria"]["labelledby"] = arr_labelledby.join(" ")
-else
-arr_labelledby << "label_#{add_default_name_and_id(options)}_#{sanitized_value(tag_value)}"
-options["aria"]["labelledby"] = arr_labelledby.join(" ")
-end
-options["aria"]["labelledby"]
-end
+    def add_aria_labelledby_for_values(tag_value, options)
+      arr_labelledby= []
+      options["aria"] ||= {}
+      arr_labelledby << "label_#{add_default_name_and_id(options)}"
+      if tag_value.nil?
+        options["aria"]["labelledby"] = arr_labelledby.join(" ")
+      else
+        arr_labelledby << "label_#{add_default_name_and_id(options)}_#{sanitized_value(tag_value)}"
+        options["aria"]["labelledby"] = arr_labelledby.join(" ")
+      end
+      options["aria"]["labelledby"]
+    end
 
     def add_aria_describedby_values(options)
       arr_describedby = []
