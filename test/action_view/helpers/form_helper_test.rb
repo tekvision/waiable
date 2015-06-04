@@ -203,40 +203,14 @@ class WaiableFormBuilderTest < ActionView::TestCase
   end
 
 
-  test "wrap error element with div element" do
-     person = Person.new(:name => "", :email => "", :password => "", :address => "")
-     person.valid?
-
-     form_buffer = form_for person, url: "dummy", as: 'person_form' do |f| 
-       person.errors.full_messages.each do |msg|
-         expect = "<div id='error_user_first_name'>#{msg}</div>".html_safe
-         actual = "<li>#{msg}</li>".html_safe
-         assert_match(expect, actual)
-       end
-     end      
-   end 
-  
-  test "wrap error element with <a> tag" do
-    person = Person.new(:email => "", :password => "", :address => "")
-    person.valid?
-
-    form_buffer = form_for person, url: "dummy", as: "person_form" do |f|
-      person.errors.full_messages.each do |msg|
-        expect = "<a>#{msg}</a>".html_safe
-        actual = msg
-        assert_match(expect, actual)
-      end
-    end
-  end
-
-  test "testing the <a> element with href attribute" do
-    person = Person.new(:email => "", :password => "", :address => "")
+  test "testing the error element with error object" do
+    person = ValidatePerson.new
     person.valid?
 
     form_buffer = form_for person, url: "dummy", as: "person_form" do |f|
       person.errors.full_messages.each do |msg|   
-        expect = href="javascript:document.getElementsByName('person[name]')[0].focus()"
-        actual = "<a>#{msg}</a>".html_safe
+         expect = "<div id=\"error_validateperson_name\"><a href=\"javascript:document.getElementsByName('validateperson[name]')[0].focus()\">Name can't be blank</a></div>"
+        actual = msg
         assert_match(expect, actual)
       end
     end

@@ -1,6 +1,3 @@
-require 'active_model/validations'
-
-
 class Person 
   extend ActiveModel::Naming
   include ActiveModel::Validations
@@ -27,4 +24,10 @@ class Person
   end
 end
 
+class ValidatePerson
+  extend ActiveModel::Naming
+  include ActiveModel::Validations
 
+  attr_accessor :name
+  validates :name, Presence: true
+end
