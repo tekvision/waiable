@@ -13,6 +13,7 @@ module Waiable
           html_options = html_options.stringify_keys
 html_options['aria'] = {}
 html_options['aria']['required'] = true if required_field?(@method_name) == true
+add_aria_describedby_values(html_options)
           add_default_name_and_id(html_options)
           options[:include_blank] ||= true unless options[:prompt] || select_not_required?(html_options)
           value = options.fetch(:selected) { value(object) }

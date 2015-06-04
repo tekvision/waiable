@@ -95,7 +95,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   end
 
   test "testing radio_button with aria-labelledby attribute" do
-    expect = 'aria-labelledby="label_person_gender"'
+    expect = 'aria-labelledby="label_person_gender label_person_gender_male"'
 
     form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.radio_button(:gender, "Male") 
@@ -240,5 +240,15 @@ class WaiableFormBuilderTest < ActionView::TestCase
         assert_match(expect, actual)
       end
     end
+
+  test "testing radio_button with aria-required attribute for mandatory field" do
+    expect = 'aria-required="true"'
+
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.radio_button :gender, "male"
+      assert_match(expect, actual)
+    end
+  end
+
   end
 end
