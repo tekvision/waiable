@@ -10,10 +10,12 @@ class Person
   validates :name, presence: true
   validates :email, presence: true
   validates :password, presence: true
+  validates :gender, presence: true
   validates :joindate, presence: true
   validates :mobile_number, presence: true
   validates :country, presence: true
   validates :address, presence: true
+validates :dateofbirth, presence: true
 
   def initialize(attributes = {})
     @attributes = attributes

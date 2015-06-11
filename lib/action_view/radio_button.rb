@@ -14,7 +14,7 @@ module Waiable
           options["type"]     = "radio"
           options["value"]    = @tag_value
           options["checked"] = "checked" if input_checked?(object, options)
-options["aria"] = {}
+options["aria"] ||= {}
 options["aria"]["required"] = true if required_field?(@method_name) == true
 add_aria_labelledby_for_values(@tag_value, options)
 add_aria_describedby_values(options)

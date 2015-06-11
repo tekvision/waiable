@@ -214,6 +214,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
         assert_match(expect, actual)
       end
     end
+end
 
   test "testing radio_button with aria-required attribute for mandatory field" do
     expect = 'aria-required="true"'
@@ -224,5 +225,23 @@ class WaiableFormBuilderTest < ActionView::TestCase
     end
   end
 
+  test "testing dateofbirth_field with aria-labelledby attribute" do
+    expect = 'aria-labelledby="label_person_dateofbirth"'
+
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.date_select :dateofbirth
+      assert_match(expect, actual)
+    end
   end
-end
+
+  test "testing date_select with aria-required attribute" do
+    expect = 'aria-required="true"'
+
+    form_buffer = form_for :person, url: "dummy" do |f|
+      actual = f.date_select :dateofbirth
+      assert_match(expect, actual)
+    end
+  end
+  end
+
+
