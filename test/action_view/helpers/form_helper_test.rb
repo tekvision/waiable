@@ -122,7 +122,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   end
 
   test "testing check_box with aria-labelledby attribute" do
-    expect = 'aria-labelledby="label_person_publish"'
+    expect = 'aria-labelledby="label_person_publish label_person_publish_1"'
 
     form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.check_box :publish
