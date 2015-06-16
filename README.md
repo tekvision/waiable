@@ -10,7 +10,7 @@ If you are looking to contribute, please  go through the contributing section be
 
 
 ## Usage
-We will update this section in detail by end of January 2015.
+We are going to publish phase 1 of Waiable by Jul 2015. Will update this section in details soon and also add new blogs to accessiblerails .wordpress.com.   
 
 ## Contributing
 ###Fork the repository
