@@ -16,6 +16,7 @@ module Waiable
       options["value"] = options.fetch("value") {value_before_type_cast(object) } unless field_type == "file"
       options["aria"] ||= {}
       options["aria"]["required"] = true if required_field?(@method_name)
+    options["aria"]["label"] = "search #{@method_name}" if field_type == "search"
       @options = options
       add_aria_describedby_values(@options)
       add_default_name_and_id(@options)

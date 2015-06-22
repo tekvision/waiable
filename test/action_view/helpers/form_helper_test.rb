@@ -131,7 +131,7 @@ class WaiableFormBuilderTest < ActionView::TestCase
   end
 
   test "testing search_field with aria-label attribute" do
-    expect = 'aria-label="Search"'
+    expect = 'aria-label="search name"'
     
     form_buffer = form_for :person, url: "dummy" do |f|
       actual = f.search_field :name
