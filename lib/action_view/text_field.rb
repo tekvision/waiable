@@ -1,4 +1,3 @@
-#require 'pry'
 require 'action_view/common_methods'
 require 'active_support/concern'
 
@@ -39,7 +38,6 @@ end
         ActionView::Helpers::Tags::NumberField,
         
 
-#	ActionView::Helpers::Tags::TextArea
 ].each do |t|
 	t.send :include, Waiable::Base::TextField
 end

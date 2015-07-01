@@ -11,7 +11,6 @@ require 'action_view/radio_button'
 require 'action_view/common_methods'
 require 'action_view/errors'
 require 'waiable/version'
-#require 'support/person'
 require 'waiable/railtie' if defined?(Rails)
 
 
