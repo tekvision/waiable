@@ -22,7 +22,7 @@ bundle install
 
 ## Usage
 
-WAIAble gem will add different accessibility features to make rails form accessible for screen reader users and keyboard users. Visually this will not remove or change any existing functionalities provided by rails core and will include aria-properties for form fields to enhance screen reader performance. To make form labels accessible, aria-labelledby property is added and default id attribute gets generated for label_for element. For mandatory form fields, aria-required property gets added when presence validator is added for that form field. For text field and text area, when maxlength option is provided, aria-describedby property is added to that form field which will announce about the size limitation of that field to the screen reader. On form submission, if there is any error then these error messages are linkable and clicking on that linkwill shift the focus  to the form field for which the error gets generated. Additionally the error message id will be added to the aria-describedby property which will announce the error message to the screen reader when the focus is on errorneous input field. For search field, aria-label property is added to provide information about the search field to the screen reader.
+WAIAble gem will add different accessibility features to make rails form accessible for screen reader users and keyboard users. Visually this will not remove or change any existing functionalities provided by rails core and will include aria-properties for form fields to enhance screen reader performance. To make form labels accessible, aria-labelledby property is added and default id attribute gets generated for label element with 'for' attribute. For mandatory form fields, aria-required property gets added when presence validator is added for that form field. For text field and text area, when maxlength option is provided, aria-describedby property is added to that form field which will announce about the size limitation of that field to the screen reader. On form submission, if there is any error then these error messages are linkable and clicking on that link will shift the focus  to the form field for which the error gets generated. Additionally the error message id will be added to the aria-describedby property which will announce the error message to the screen reader when the focus is on errorneous input field. For search field, aria-label property is added to provide information about the search field to the screen reader.
 
 ## Bug Reports
 
@@ -50,6 +50,9 @@ You can join  us in the meetup to have more insight into what Accessibility is a
 1. Commit your changes ( git commit -am 'Add some feature' )
 2. Push to the branch ( git push origin my-new-feature )
 3. Create new Pull Request
+
+
 ###Follow us
+
 Twitter: @techvision_ss
 Blog: http://accessiblerails.wordpress.com
