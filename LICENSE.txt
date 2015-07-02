@@ -1,5 +1,4 @@
-Copyright (c) 2014 Gautam Rege, Nitin Dhaware, Sethupathi Asokan,
-Shailesh Patil and Jiren Patel
+Copyright (c) 2015 Techvision Software Solutions http://techvision.net.in
 
 MIT License
 

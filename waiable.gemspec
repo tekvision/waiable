@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "waiable"
   spec.version       = Waiable::VERSION
   spec.platform      = Gem::Platform::RUBY
-  spec.authors       = ["Nitin Dhaware", "Gautam Rege", "Sethupathi Asokan", "Jiren Patel", "Shailesh Patil"]
-  spec.email         = ["gautam@joshsoftware.com"]
-  spec.summary       = %q{This gems makes Rails ActionViews adhere to WAI accessibility standards}
+  spec.authors       = ["Sanghapal Bhowate", "Shantanu Choudhury"]
+  spec.email         = ["sangha@techvision.net.in", "shantanu@techvision.net.in", "developer@techvision.net.in"]
+  spec.summary       = %q{Making rails accessible !}
   spec.description   = %q{Details in the readme}
-  spec.homepage      = "http://brails.org"
+  spec.homepage      = "https://github.com/techvision/waiable"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
