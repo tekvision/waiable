@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sanghapal Bhowate", "Shantanu Choudhury"]
   spec.email         = ["sangha@techvision.net.in", "shantanu@techvision.net.in", "developer@techvision.net.in"]
   spec.summary       = %q{Making rails accessible !}
-  spec.description   = %q{Details in the readme}
+  spec.description   = %q{Making rails accessible !}
   spec.homepage      = "https://github.com/techvision/waiable"
   spec.license       = "MIT"
 
